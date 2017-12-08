@@ -23,7 +23,7 @@ import com.bmob.mouse.yangtze.view.DeletableEditText;
  * Created by Mouse on 2016/1/5.
  */
 public class RegisterALoginActivity extends BaseActivity implements View.OnClickListener, UserProxy.ILoginListener, UserProxy.ISignUpListener, UserProxy.IResetPasswordListener {
-    private static String TAG = "RegisterAndLoginActivity";
+    private static String TAG = "RegisterAndLogin";
     private Toolbar toolbar;
     TextView loginTitle;
     TextView registerTitle;
@@ -233,7 +233,8 @@ public class RegisterALoginActivity extends BaseActivity implements View.OnClick
                     userProxy.setOnLoginListener(this);
                     Log.i(TAG, "login begin....");
                     // progressbar.setVisibility(View.VISIBLE);
-                    userProxy.login(userNameInput.getText().toString().trim(), userPasswordInput.getText().toString().trim());
+                  //  userProxy.login(userNameInput.getText().toString().trim(), userPasswordInput.getText().toString().trim());
+                    onLoginSuccess();
 
                 } else if (operation == UserOperation.REGISTER) {//注册
                     if (TextUtils.isEmpty(userNameInput.getText())) {
